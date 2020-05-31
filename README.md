@@ -112,7 +112,7 @@ The REST API to the punkapi app is described below.
     }.....
 
 
-## Get random beer
+## Get a random beer
 ### Request
 
 `GET /v2/beers/random`
