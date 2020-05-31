@@ -9,17 +9,17 @@ For building and running the application you need:
 - [Docker Compose (1.21.2)](https://docs.docker.com/compose/install/)
 
 
-# Docker containers.
+# Docker containers
 
 ## Create containers 
-To create punkapi database, we are using Docker-compose to build a mysql container (also an 'adminer container' to have access to the database. you can see the credential in docker-compose.yml).
+To create punkapi database, we are going to use docker-compose to build a mysql docker container (also an 'adminer container' to have access to the database. you can see the credential in docker-compose.yml).
 
 To create the containers, please run the follow command (inside of the docker folder)
 
 - docker-compose up -d
 
 
-# REST API, PunkApi application
+# REST API
 
 This is a example of a Spring-Boot application providing a REST API.
 
@@ -31,7 +31,7 @@ This is a example of a Spring-Boot application providing a REST API.
 
     mvn test
 
-# REST API
+# EndPoints
 
 The REST API to the punkapi app is described below.
 
@@ -64,7 +64,7 @@ The REST API to the punkapi app is described below.
 ## Get beer by ID
 ### Request
 
-`GET /v2/beers/30
+`GET /v2/beers/30`
 
     curl -i -H 'Accept: application/json' http://localhost:8080/v2/beers/30
 
@@ -115,7 +115,7 @@ The REST API to the punkapi app is described below.
 ## Get random beer
 ### Request
 
-`GET /v2/beers/random
+`GET /v2/beers/random`
 
     curl -i -H 'Accept: application/json' http://localhost:8080/v2/beers/random
 
