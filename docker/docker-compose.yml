@@ -1,0 +1,25 @@
+version: "3"
+    
+services:
+    punk-db:
+        image: mysql:5.7
+        environment: 
+        - MYSQL_ROOT_PASSWORD=kjsd.mkjodthf@1_
+        - MYSQL_DATABASE=punk_db
+        - MYSQL_USER=punk_user
+        - MYSQL_PASSWORD=punk_pass
+        - MYSQL_ROOT_HOST=%
+        volumes:
+            - punk-db-data:/var/lib/mysql
+        ports:
+            - 3306:3306
+                
+    adminer:
+        image: adminer
+        links: 
+        - punk-db
+        ports:
+        - 8888:8080
+
+volumes:
+    punk-db-data:

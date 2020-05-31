@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet author="punk_user" id="1">
+		<preConditions onFail="MARK_RAN">
+        <not>
+            <tableExists tableName="beer"/>
+        </not>
+    	</preConditions>    
+    
+        <createTable tableName="beer">
+            <column name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(100)"/>
+            <column name="tagline" type="VARCHAR(255)"/>
+            <column name="first_brewed" type="VARCHAR(7)"/>
+            <column name="description" type="VARCHAR(1000)"/>
+            <column name="image_url" type="VARCHAR(255)"/>
+            <column name="abv" type="DOUBLE"/>
+        </createTable>
+        <rollback>
+            <dropTable tableName="beer"/>
+        </rollback>
+    </changeSet>
+    
+</databaseChangeLog>
