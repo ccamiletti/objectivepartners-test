@@ -75,7 +75,7 @@ The REST API to the punkapi app is described below.
     Status Code: 200
     Remote Address: [::1]:8080
     
-    [{
+    {
     "id": 30,
     "name": "Dana - IPA Is Dead",
     "description": "Hailing from Slovenia, Dana was originally cross bred from the German Hallertau Magnum and native            Slovenian varieties. Like any good faux noble hop should, it infuses a rustic, musty spiciness into a toasty beast of a      malt base.",
@@ -83,7 +83,7 @@ The REST API to the punkapi app is described below.
     "tagline": "Single Hop India Pale Ale.",
     "first_brewed": "02/2013",
     "image_url": "https://images.punkapi.com/v2/30.png"
-    }...
+    }
 
 
 ## Get list of beers paginated
@@ -110,6 +110,31 @@ The REST API to the punkapi app is described below.
     "first_brewed": "09/2007",
     "image_url": "https://images.punkapi.com/v2/keg.png"
     }.....
+
+
+## Get random beer
+### Request
+
+`GET /v2/beers/random
+
+    curl -i -H 'Accept: application/json' http://localhost:8080/v2/beers/random
+
+### Response
+
+    Request URL: http://localhost:8080/v2/beers/random
+    Request Method: GET
+    Status Code: 200
+    Remote Address: [::1]:8080
+    
+    {
+    "id": 30,
+    "name": "Dana - IPA Is Dead",
+    "description": "Hailing from Slovenia, Dana was originally cross bred from the German Hallertau Magnum and native            Slovenian varieties. Like any good faux noble hop should, it infuses a rustic, musty spiciness into a toasty beast of a      malt base.",
+    "abv": 6.7,
+    "tagline": "Single Hop India Pale Ale.",
+    "first_brewed": "02/2013",
+    "image_url": "https://images.punkapi.com/v2/30.png"
+    }
 
 
 ## Get list of beers by name
