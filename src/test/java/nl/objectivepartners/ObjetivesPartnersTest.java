@@ -23,7 +23,7 @@ public class ObjetivesPartnersTest {
 	public static final String USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36";
 	private static final String PARAMETERS = "parameters";
 	
-	public static HttpEntity<String> getHttpEntity() {
+	public HttpEntity<String> getHttpEntity() {
         headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
         headers.add("user-agent", USER_AGENT);
         return new HttpEntity<String>(PARAMETERS, headers);
